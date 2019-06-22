@@ -1,0 +1,2 @@
+class ProductWishlist < ApplicationRecord
+end
