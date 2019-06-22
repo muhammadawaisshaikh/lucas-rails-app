@@ -1,0 +1,2 @@
+class ProductClick < ApplicationRecord
+end
