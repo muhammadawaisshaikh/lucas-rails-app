@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  review: 
-  star_rating: 1
+  name: 
+  url: MyString
 
 two:
-  review: 
-  star_rating: 1
+  name: 
+  url: MyString

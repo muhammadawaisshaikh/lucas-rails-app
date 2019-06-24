@@ -3,11 +3,9 @@
 one:
   name: 
   description: 
-  amount: 
-  platform: MyString
+  amount: 1
 
 two:
   name: 
   description: 
-  amount: 
-  platform: MyString
+  amount: 1

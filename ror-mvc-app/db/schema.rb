@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_22_142935) do
+ActiveRecord::Schema.define(version: 2019_06_24_093919) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,9 +31,14 @@ ActiveRecord::Schema.define(version: 2019_06_22_142935) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "platforms", force: :cascade do |t|
+    t.string "name"
+    t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "product_admins", force: :cascade do |t|
-    t.integer "product_id"
-    t.integer "admin_id"
     t.integer "finds"
     t.integer "likes"
     t.datetime "created_at", null: false
@@ -41,30 +46,22 @@ ActiveRecord::Schema.define(version: 2019_06_22_142935) do
   end
 
   create_table "product_categories", force: :cascade do |t|
-    t.integer "product_id"
-    t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "product_clicks", force: :cascade do |t|
-    t.integer "product_id"
-    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "product_collections", force: :cascade do |t|
-    t.integer "product_id"
-    t.integer "user_id"
     t.string "collection_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "product_reviews", force: :cascade do |t|
-    t.integer "product_id"
-    t.integer "user_id"
     t.string "review"
     t.integer "star_rating"
     t.datetime "created_at", null: false
@@ -72,15 +69,12 @@ ActiveRecord::Schema.define(version: 2019_06_22_142935) do
   end
 
   create_table "product_stocks", force: :cascade do |t|
-    t.integer "product_id"
     t.integer "stock"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "product_wishlists", force: :cascade do |t|
-    t.integer "product_id"
-    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -88,15 +82,13 @@ ActiveRecord::Schema.define(version: 2019_06_22_142935) do
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.string "amount"
-    t.string "platform"
+    t.integer "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "searches", force: :cascade do |t|
     t.string "search_term"
-    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
