@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_24_093919) do
+ActiveRecord::Schema.define(version: 2019_06_24_115431) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,8 @@ ActiveRecord::Schema.define(version: 2019_06_24_093919) do
     t.integer "likes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "admin_id"
+    t.index ["admin_id"], name: "index_product_admins_on_admin_id"
   end
 
   create_table "product_categories", force: :cascade do |t|
@@ -103,4 +105,5 @@ ActiveRecord::Schema.define(version: 2019_06_24_093919) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "product_admins", "admins"
 end
