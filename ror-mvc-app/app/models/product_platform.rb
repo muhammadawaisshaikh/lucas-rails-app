@@ -1,0 +1,2 @@
+class ProductPlatform < ApplicationRecord
+end
